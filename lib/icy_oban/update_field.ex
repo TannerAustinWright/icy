@@ -1,5 +1,8 @@
 defmodule IcyOban.UpdateField do
-  use Oban.Pro.Workers.Chain, queue: :default, by: [:worker, args: :mg_id]
+  use Oban.Pro.Workers.Chain,
+    queue: :default,
+    by: [:worker, args: :mg_id],
+    wait_retry: 0
 
   require Logger
 
